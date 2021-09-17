@@ -1,0 +1,34 @@
+$0 para toda la línea.
+$1 para el primer campo.
+$2 para el segundo campo.
+$n para el campo enésimo campo.
+
+Imprime el primer nombre
+awk '{print($1)}' datos.txt
+
+Condición si el primer parametro es igual entonces imprima el segundo.
+awk '$1=="DANNY" {print($2)}' datos.txt
+
+Condición si el primer parametro es igual entonces imprima toda la línea.
+awk '$1=="DANNY" {print($0)}' datos.txt
+
+Imprime el primer parametro y el 4 parametro
+awk '{print($1, $4)}' datos.txt
+
+Definimos el primer paramentro cuando encuentre la primera coma.
+awk 'BEGIN { FS = "," }{print($1, $3)}' datos.txt
+
+OFS Indica que separador podemos usar en esta caso un guión(-).
+awk 'BEGIN { FS = ","; OFS = "-" }{print($1, $3)}' datos.txt
+
+Para ejecutar
+awk -f prueba.awk datos.tx
+
+
+
+
+
+
+
+
+
