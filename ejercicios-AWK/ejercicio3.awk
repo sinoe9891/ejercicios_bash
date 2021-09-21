@@ -1,4 +1,9 @@
-NF == 9 {print $1,$2,$3,$4,$5,$6,$7,$8,$9}{OFS=", "}
-NF == 8 {print $1,$2,$3,$4,$5,$6,$7,$8}{OFS=", "}
-#NF == 8 { $9"";print $0=$0;OFS=", "; NF=NF}
-
+#Cree un script en AWK que utilice el archivo datos.txt para imprimir el mismo contenido del archivo solo que utilizando de separador el caracter "," en el formato de salida.
+#Danny Velásquez
+BEGIN {
+	OFS = ", "
+}
+{
+	$1 = $1
+	print($0)
+}
