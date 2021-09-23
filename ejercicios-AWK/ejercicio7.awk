@@ -4,5 +4,6 @@ BEGIN{
 	print ("Nombre | Última hora de conexion")
 	OFS = ", "
 }
-$1 ~ /N$/ && NF == 9 {print ($1,$9)} 
-$1 ~ /N$/ && NF == 8 {print ($1,$8)} 
+$1 ~ /N$/{
+        print($1, $NF) 
+}
